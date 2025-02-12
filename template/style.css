@@ -1,0 +1,218 @@
+html, body { margin: 0; padding: 0; }
+
+main {
+    position: absolute;
+    inset: 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.crossword {
+    width: 80%;
+    max-width: 60rem;
+    height: calc();
+
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: auto 22rem;
+
+    grid-template-areas:
+        "puzzle clues";
+}
+
+
+/* ************** */
+/* Puzzle Section */
+/* ************** */
+
+.puzzle-section {
+    grid-area: puzzle;
+}
+.puzzle-container {
+    position: relative;
+    width: 100%;
+}
+.puzzle {
+    position: absolute;
+    inset: 0;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.puzzle > div {
+    position: relative;
+    margin: 0;
+    padding: 0 5%;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    cursor: pointer;
+    container-type: size;
+}
+
+/* cell content */
+.puzzle > div > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-weight: bold;
+    font-size: 5vw;
+    font-size: 75cqw;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none;
+}
+
+/* black */
+.puzzle > .b { cursor: default; background-color: black; }
+/* transparent */
+.puzzle > .t { cursor: default; border: none; }
+/* letters of the selected word */
+.puzzle > .o { background-color: rgb(135, 185, 250); }
+/* selected */
+.puzzle > .s { background-color: rgb(128, 128, 231); }
+
+/* cell corner number */
+.puzzle i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    top: 5cqw;
+    left: 5cqw;
+    font-style: normal;
+    font-size: 1.5vw;
+    font-size: 20cqw;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none;
+}
+
+.puzzle-section > footer {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* ************ */
+/* Clues Section */
+/* ************ */
+
+.clues {
+    grid-area: clues;
+    overflow: hidden;
+
+    display: grid;
+    gap: 0 0.5rem;
+    grid-template-rows: 1.625rem 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "h-across h-down"
+        "across down";
+}
+
+.clues > h3 {
+    margin: 0;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.125rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.clues > .h-across { grid-area: h-across; }
+.clues > .h-down { grid-area: h-down; }
+
+.clues > div {
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.clues > .across { grid-area: across; }
+.clues > .down { grid-area: down; }
+
+.clues dl {
+    margin: 0 0.125rem;
+    padding-top: 0.25rem;
+
+    font-size: 0.875rem;
+    
+    display: grid;
+    gap: 0.25rem 0;
+    grid-template-columns: 1.375rem 1fr;
+}
+
+.clues dt {
+    min-width: 0;
+    margin: 0;
+    border-radius: 0.5rem 0 0 0.5rem;
+    padding: 0.25rem 0.125rem 0.25rem 0;
+    text-align: right;
+    font-weight: bold;
+}
+
+.clues dd {
+    min-width: 0;
+    margin: 0;
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 0.25rem;
+    overflow-wrap: break-word;
+}
+
+/* selected */
+.clues .s { background-color: rgb(135, 185, 250); }
+
+/* ********** */
+/* RESPONSIVE */
+/* ********** */
+@media screen and (max-width: 48rem) {
+    .crossword {
+        grid-template-columns: auto 11rem;
+    }
+
+    .clues {
+        grid-area: clues;
+        overflow: hidden;
+    
+        gap: 0.5rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.625rem 1fr 1.625rem 1fr;
+        grid-template-areas:
+        "h-across"
+        "across"
+        "h-down"
+        "down";
+    }
+}
+
+@media screen and (max-width: 36rem) {
+    main {
+        align-items: start;
+    }
+    .crossword {
+        height: auto;
+        margin-top: 0;
+        padding: 2rem 0;
+
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+    
+        grid-template-areas:
+            "puzzle"
+            "clues";
+    }
+    .clues {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1.625rem 1fr;
+        grid-template-areas:
+        "h-across h-down"
+        "across down";
+    }
+}
