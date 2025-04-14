@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crossword</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <button class="show-keyboard">키보드 보기</button>
+    </header>
+    <main>
+        <div class="crossword">
+            <section class="puzzle-section">
+                <div class="puzzle-container">
+                    <div style="padding-top: 100%;"></div>
+                    <div class="puzzle" data-row="5" data-col="8" data-answer="79785590c1c89c021a2b560a4e1b48b1aeb6b4e1faa63d325c6c521e703a05dc">
+                        <div class="b"></div><div data-d="1"></div><div class="b"></div><div data-d="2"></div><div class="b"></div><div class="b"></div><div data-d="3"></div><div class="b"></div>
+                        <div data-a="4"></div><div></div><div></div><div></div><div></div><div></div><div></div><div class="b"></div>
+                        <div class="b"></div><div></div><div class="b"></div><div></div><div class="b"></div><div class="b"></div><div></div><div class="b"></div>
+                        <div data-a="5"></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="b"></div><div class="b"></div><div class="b"></div><div></div><div class="b"></div><div class="b"></div><div></div><div class="b"></div>
+                    </div>
+                </div>
+                <footer role="contentinfo">&ldquo;둘이서 짝을 이루는&rdquo;</footer>
+            </section>
+            <section class="clues">
+                <h3 class="h-across">가로</h3>
+                <h3 class="h-down">세로</h3>
+                <div class="across">
+                    <dl>
+                        <dt>4</dt><dd>까치와</dd>
+                        <dt>5</dt><dd><strong>정답마다 하나씩, 5종류가 전부 있는 것</strong></dd>
+                    </dl>
+                </div>
+                <div class="down">                    
+                    <dl>
+                        <dt>1</dt><dd>진짜와</dd>
+                        <dt>2</dt><dd>天과</dd>
+                        <dt>3</dt><dd>슬픔과</dd>
+                    </dl>
+                </div>
+            </section>
+        </div>
+    </main>
+    <section class="keyboard-container" hidden>
+        <div class="keyboard">
+            <div class="keyboard-row1">
+                <button>ㅂ</button><button>ㅈ</button><button>ㄷ</button><button>ㄱ</button><button>ㅅ</button><button>ㅛ</button><button>ㅕ</button><button>ㅑ</button><button>ㅐ</button><button>ㅔ</button>
+            </div>
+            <div class="keyboard-row2">
+                <button>ㅁ</button><button>ㄴ</button><button>ㅇ</button><button>ㄹ</button><button>ㅎ</button><button>ㅗ</button><button>ㅓ</button><button>ㅏ</button><button>ㅣ</button>
+            </div>
+            <div class="keyboard-row3">
+                <button id="keyboard-shift">⇧</button><button>ㅋ</button><button>ㅌ</button><button>ㅊ</button><button>ㅍ</button><button>ㅠ</button><button>ㅜ</button><button>ㅡ</button><button class="keyboard-backspace">⌫</button>
+            </div>
+        </div>
+    </section>
+    <script src="../crossword.js"></script>
+    <script src="../keyboard.js"></script>
+</body>
+</html>

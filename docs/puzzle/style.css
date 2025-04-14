@@ -1,18 +1,29 @@
 html, body { margin: 0; padding: 0; }
 
+header {
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    z-index: 1;
+}
+
 main {
     position: absolute;
     inset: 0;
+    z-index: 0;
+
+    padding-top: 3rem;
     
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+
+    overflow-y: auto;
 }
 
 .crossword {
     width: 80%;
     max-width: 60rem;
-    height: calc();
 
     display: grid;
     gap: 0.75rem;
@@ -89,8 +100,8 @@ main {
     left: 5cqw;
     margin: 0;
     font-weight: normal;
-    font-size: 1.5vw;
-    font-size: 20cqw;
+    font-size: 2vw;
+    font-size: 40cqw;
 
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
@@ -177,6 +188,58 @@ main {
     border-left: 0.3rem solid rgb(135, 185, 250);
 }
 
+
+/* ******** */
+/* Keyboard */
+/* ******** */
+.keyboard-container, .keyboard {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.keyboard-container {
+    height: 10.5rem;
+}
+.keyboard {
+    background-color: #ccc;
+    padding-bottom: 0.5rem;
+}
+.keyboard > div {
+    display: grid;
+    gap: 0.25rem;
+    height: 3rem;
+    margin: 0.25rem 0.1rem;
+}
+.keyboard-row1 {
+    grid-template-columns: repeat(10, 1fr);
+}
+.keyboard-row2 {
+    width: 90%;
+    padding-left: 5%;
+    grid-template-columns: repeat(9, 1fr);
+}
+.keyboard-row3 {
+    grid-template-columns: 1.5fr repeat(7, 1fr) 1.5fr;
+}
+
+.keyboard button {
+    font-size: 1.75rem;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+.keyboard button:hover {
+    background-color: #e4e4e4;
+}
+.keyboard button:active {
+    background-color: #ddd;
+}
+
+
 /* ********** */
 /* RESPONSIVE */
 /* ********** */
@@ -201,9 +264,6 @@ main {
 }
 
 @media screen and (max-width: 36rem) {
-    main {
-        align-items: start;
-    }
     .crossword {
         height: auto;
         margin-top: 0;
@@ -222,5 +282,8 @@ main {
         grid-template-areas:
         "h-across h-down"
         "across down";
+    }
+    .keyboard button {
+        font-size: 1.25rem;
     }
 }

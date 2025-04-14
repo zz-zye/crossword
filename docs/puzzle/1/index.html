@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crossword</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <header>
+        <button class="show-keyboard">키보드 보기</button>
+    </header>
     <main>
         <div class="crossword">
             <section class="puzzle-section">
                 <div class="puzzle-container">
                     <div style="padding-top: 100%;"></div>
-                    <div class="puzzle" data-row="4" data-col="5">
+                    <div class="puzzle" data-row="4" data-col="5" data-answer="73be8943899a79f54f566344bb92df538dc025a556787526a83c00fd09e8559f">
                         <div data-a="1" data-d="1"></div><div data-d="2"></div><div data-d="3"></div><div data-d="4"></div><div data-d="5"></div>
                         <div data-a="6"></div><div></div><div></div><div></div><div></div>
                         <div data-a="7"></div><div></div><div></div><div></div><div></div>
                         <div data-a="8"></div><div></div><div></div><div></div><div></div>
                     </div>
                 </div>
-                <footer role="contentinfo">"1번째 십자말풀이" - Zye</footer>
+                <footer role="contentinfo">&ldquo;천리 길도 1걸음부터&rdquo;</footer>
             </section>
             <section class="clues">
                 <h3 class="h-across">가로</h3>
@@ -29,13 +32,13 @@
                         <dt>1</dt><dd>불태우다 = ○○하다</dd>
                         <dt>6</dt><dd>카드에서 1</dd>
                         <dt>7</dt><dd><strong>이 1번째 퍼즐에 꽤 어울리는 단어</strong></dd>
-                        <dt>8</dt><dd>'우리들의'를 정겹게 부르는 말</dd>
+                        <dt>8</dt><dd>&lsquo;우리들의&rsquo;를 정겹게 부르는 말</dd>
                     </dl>
                 </div>
                 <div class="down">                    
                     <dl>
                         <dt>1</dt><dd>아침에 일어나서 1번째로 할 만한 것</dd>
-                        <dt>2</dt><dd>기름 <i>('1'이 들어감?)</i></dd>
+                        <dt>2</dt><dd>기름 <i>(&lsquo;1&rsquo;이 들어감?)</i></dd>
                         <dt>3</dt><dd>베이스캠프</dd>
                         <dt>4</dt><dd>1호선의 역 중 하나. 신창과 천안 사이</dd>
                         <dt>5</dt><dd>○○ 정말이야?</dd>
@@ -44,6 +47,20 @@
             </section>
         </div>
     </main>
-    <script src="crossword.js"></script>
+    <section class="keyboard-container" hidden>
+        <div class="keyboard">
+            <div class="keyboard-row1">
+                <button>ㅂ</button><button>ㅈ</button><button>ㄷ</button><button>ㄱ</button><button>ㅅ</button><button>ㅛ</button><button>ㅕ</button><button>ㅑ</button><button>ㅐ</button><button>ㅔ</button>
+            </div>
+            <div class="keyboard-row2">
+                <button>ㅁ</button><button>ㄴ</button><button>ㅇ</button><button>ㄹ</button><button>ㅎ</button><button>ㅗ</button><button>ㅓ</button><button>ㅏ</button><button>ㅣ</button>
+            </div>
+            <div class="keyboard-row3">
+                <button id="keyboard-shift">⇧</button><button>ㅋ</button><button>ㅌ</button><button>ㅊ</button><button>ㅍ</button><button>ㅠ</button><button>ㅜ</button><button>ㅡ</button><button class="keyboard-backspace">⌫</button>
+            </div>
+        </div>
+    </section>
+    <script src="../crossword.js"></script>
+    <script src="../keyboard.js"></script>
 </body>
 </html>
