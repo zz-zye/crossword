@@ -13,6 +13,7 @@ E_show_keyboard.addEventListener('click', (e) => {
         E_main.style.bottom = '0';
         E_show_keyboard.innerHTML = '키보드 보기';
     }
+    e.target.blur();
 });
 
 const EL_row1 = document.querySelector('.keyboard-row1').children;
